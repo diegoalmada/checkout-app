@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  checkout:
+    build:
+      context: "./"
+    environment:
+      grpc.host: discount
+      grpc.port: 50051
+    container_name: checkout
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - discount
+    links:
+      - discount
+    networks:
+      - checkout-net
+  discount:
+    image: hashorg/hash-mock-discount-service
+    container_name: discount
+    restart: always
+    hostname: discount
+    ports:
+      - "50051:50051"
+    networks:
+      - checkout-net
+networks:
+  checkout-net:
+    driver: bridge
