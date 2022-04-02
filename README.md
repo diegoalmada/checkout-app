@@ -17,7 +17,7 @@ Além de gerar o pacote jar do projeto, este gerará os testes unitários.
 
 #### Incializar os container "discount" e "checkout"
 ```
-docker-compose up --build -d
+docker-compose up -d
 ```
 
 Com os container inicializados, você pode acessar o Postman e realizar a seguinte chamada:
