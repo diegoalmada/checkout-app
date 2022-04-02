@@ -55,6 +55,6 @@ o retorno deverá ser 404 (Bad Request), com a seguinte mensagem:
 
 A outra possibilidade é parar o container "discount", através do comando abaixo.
 ```
-docker compose stop discount
+docker-compose stop discount
 ```
 Com isso, o valor de desconto ao consumir a API será ZERO.
